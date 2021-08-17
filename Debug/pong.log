@@ -1,13 +1,1 @@
-﻿  pong.cpp
-C:\Users\Martín\Desktop\pong\input.h(9,2): warning C4091: 'typedef ': se ha omitido a la izquierda de 'EstadoInput' cuando no hay ninguna variable declarada
-C:\Users\Martín\Desktop\pong\utils.h(10,2): warning C4091: 'typedef ': se ha omitido a la izquierda de 'Coordenadas' cuando no hay ninguna variable declarada
-C:\Users\Martín\Desktop\pong\pong.cpp(110,32): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(112,32): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(133,33): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(134,33): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(144,40): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(147,36): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(199,25): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(200,34): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Martín\Desktop\pong\pong.cpp(225,24): warning C4244: 'argumento': conversión de 'float' a 'Uint32'; posible pérdida de datos
-  pong.vcxproj -> C:\Users\Martín\Desktop\pong\Debug\pong.exe
+﻿  pong.vcxproj -> C:\Users\Martín\Desktop\UADE\Fundamentos de Informática\Pong\Debug\pong.exe
