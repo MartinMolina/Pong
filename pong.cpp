@@ -126,8 +126,7 @@ void refrescarPartida(float deltaTimeInSeconds) {
             puntaje1++;
         else
             puntaje2++;
-        pelota.x = 630;
-        pelota.y = 100;
+        inicializarPosiciones();
     }
 
     pelota.x += velocidadPelotaX;
@@ -154,7 +153,7 @@ void renderizar() {
     // Limpia el buffer del renderer
     SDL_RenderClear(renderer);
 
-    // Dependiendo de la pantalla actual, elige que cosas insertar en el renderer
+    // Dependiendo de la pantalla actual, elige qué cosas insertar en el renderer
     if (enPartida) {
         texturaPuntaje1 = crearCartel(to_string(puntaje1).c_str(), fuente8Bits, colorFuente, renderer);
         texturaPuntaje2 = crearCartel(to_string(puntaje2).c_str(), fuente8Bits, colorFuente, renderer);
@@ -226,4 +225,5 @@ int main(int argc, char* args[]) {
     }
 
     return 0;
+    
 }
