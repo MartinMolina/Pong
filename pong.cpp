@@ -43,14 +43,12 @@ int tiempoPartida = 120;
 int difTiempo;
 
 float gameTimer = 0;
-float velocidadPelotaX = 5;
-float velocidadPelotaY = 5;
 
 string resultado;
 
 Coordenadas paleta1;
 Coordenadas paleta2;
-Coordenadas pelota;
+Pelota pelota;
 
 EstadoInput estadoInput;
 
@@ -81,6 +79,8 @@ void inicializarJuego() {
     renderer = inicializarSDL("Pong!", 1280, 720, renderer);
     cargarAssets();
     inicializarPosiciones();
+    pelota.direccion.x = 5;
+    pelota.direccion.y = 5;
 }
 
 void refrescarPartida(float deltaTimeInSeconds) {
@@ -114,11 +114,11 @@ void refrescarPartida(float deltaTimeInSeconds) {
 
     // Fisicas de la pelota
 
-    if (pelota.x == 120 && (pelota.y > paleta1.y - 20 && pelota.y < paleta1.y + 150) || pelota.x == 1140 && (pelota.y > paleta2.y - 20 && pelota.y < paleta2.y + 150))
-        velocidadPelotaX = -velocidadPelotaX;
+    if (pelota.x <= 120 && (pelota.y > paleta1.y - 20 && pelota.y < paleta1.y + 150) || pelota.x >= 1140 && (pelota.y > paleta2.y - 20 && pelota.y < paleta2.y + 150))
+        pelota.direccion.x = -pelota.direccion.x;
 
-    if (pelota.y == 0 || pelota.y == 700)
-        velocidadPelotaY = -velocidadPelotaY;
+    if (pelota.y <= 0 || pelota.y >= 700)
+        pelota.direccion.y = -pelota.direccion.y;
 
     if (pelota.x <= -20 || pelota.x >= 1280)
     {
@@ -129,13 +129,14 @@ void refrescarPartida(float deltaTimeInSeconds) {
         inicializarPosiciones();
     }
 
-    pelota.x += velocidadPelotaX;
-    pelota.y += velocidadPelotaY;
+    pelota.x += pelota.direccion.x;
+    pelota.y += pelota.direccion.y;
+
 
 
     // Paleta controlada por CPU
 
-    if (pelota.x > 690 && velocidadPelotaX > 0 && (SDL_GetTicks() / 1000) % 4 != 0)
+    if (pelota.x > 690 && pelota.direccion.x > 0 && (SDL_GetTicks() / 1000) % 4 != 0)
     {
         if (pelota.y > paleta2.y)
         {
@@ -150,10 +151,10 @@ void refrescarPartida(float deltaTimeInSeconds) {
 
 void renderizar() {
 
-    // Limpia el buffer del renderer
+    // Limpiar buffer 
     SDL_RenderClear(renderer);
 
-    // Dependiendo de la pantalla actual, elige qué cosas insertar en el renderer
+    // Definir cosas a renderizar
     if (enPartida) {
         texturaPuntaje1 = crearCartel(to_string(puntaje1).c_str(), fuente8Bits, colorFuente, renderer);
         texturaPuntaje2 = crearCartel(to_string(puntaje2).c_str(), fuente8Bits, colorFuente, renderer);

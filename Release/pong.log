@@ -1,8 +1,0 @@
-﻿  input.cpp
-C:\Users\Martín\Desktop\UADE\Fundamentos de Informática\Pong\input.h(2,10): fatal error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
-  pong.cpp
-C:\Users\Martín\Desktop\UADE\Fundamentos de Informática\Pong\pong.cpp(3,10): fatal error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
-  render.cpp
-C:\Users\Martín\Desktop\UADE\Fundamentos de Informática\Pong\render.h(3,10): fatal error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
-  utils.cpp
-C:\Users\Martín\Desktop\UADE\Fundamentos de Informática\Pong\render.h(3,10): fatal error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
